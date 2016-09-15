@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The arms submodule &#8212; multibeep 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="multibeep 0.1 documentation" href="index.html" />
+    <link rel="next" title="The bandits submodule" href="bandits.html" />
+    <link rel="prev" title="The util submodule" href="util.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bandits.html" title="The bandits submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="util.html" title="The util submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">multibeep 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-arms-submodule">
+<h1>The arms submodule<a class="headerlink" href="#the-arms-submodule" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-multibeep.arms"></span><dl class="class">
+<dt id="multibeep.arms.base">
+<em class="property">class </em><code class="descclassname">multibeep.arms.</code><code class="descname">base</code><a class="headerlink" href="#multibeep.arms.base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="multibeep.arms.base.get_ident">
+<code class="descname">get_ident</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.base.get_ident" title="Permalink to this definition">¶</a></dt>
+<dd><p>access to the possibly non-unique name of an arm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>string</em> &#8211; name of the arm</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.arms.base.posterior">
+<code class="descname">posterior</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.base.posterior" title="Permalink to this definition">¶</a></dt>
+<dd><p>access to the arm&#8217;s posterior</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>posterior_class</em> &#8211; a (valid) posterior</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.arms.base.provides_posterior">
+<code class="descname">provides_posterior</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.base.provides_posterior" title="Permalink to this definition">¶</a></dt>
+<dd><p>to query if an arm provides a posterior</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>bool</em> &#8211; True if the arm has a posterior, False if not</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.arms.base.pull">
+<code class="descname">pull</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.base.pull" title="Permalink to this definition">¶</a></dt>
+<dd><p>pulls the arm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>float</em> &#8211; recieved reward</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.arms.base.real_mean">
+<code class="descname">real_mean</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.base.real_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>the mean of the underlying distribution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>float</em> &#8211; mean of the underlying distribution, NaN if N/A</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.arms.base.real_variance">
+<code class="descname">real_variance</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.base.real_variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>the variance of the underlying distribution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>float</em> &#8211; variance of the underlying distribution, NaN if N/A</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.arms.bernoulli">
+<em class="property">class </em><code class="descclassname">multibeep.arms.</code><code class="descname">bernoulli</code><span class="sig-paren">(</span><em>float_t p</em>, <em>rng_class rng</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.bernoulli" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.arms.base" title="multibeep.arms.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.arms.base</span></code></a></p>
+<p>The classic Bernoulli arm.</p>
+<p>Provides the &#8216;default&#8217; posterior using a Beta prior.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>p</strong> (<em>float</em>) &#8211; the p parameter of the Bernoulli distribution</li>
+<li><strong>rng</strong> (<a class="reference internal" href="util.html#multibeep.util.rng_class" title="multibeep.util.rng_class"><em>multibeep.util.rng_class</em></a>) &#8211; a random number generator object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.arms.data">
+<em class="property">class </em><code class="descclassname">multibeep.arms.</code><code class="descname">data</code><span class="sig-paren">(</span><em>ndarray data</em>, <em>name</em>, <em>rng_class rng</em>, <em>bootstrap=False</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.arms.base" title="multibeep.arms.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.arms.base</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>numpy.ndarray (1d)</em>) &#8211; The data for this arme. The data is copied at least once, but if the data is not in
+C order, a second temporary copy is made.</li>
+<li><strong>name</strong> (<em>string</em>) &#8211; the name associated with this arm</li>
+<li><strong>rng</strong> (<a class="reference internal" href="util.html#multibeep.util.rng_class" title="multibeep.util.rng_class"><em>multibeep.util.rng_class</em></a>) &#8211; a random number generator object</li>
+<li><strong>bootstrap</strong> (<em>bool</em>) &#8211; <p>If false, the rewards are returned in sequential order
+starting with the first when the end is reached.</p>
+<p>If true, an entry is chosen uniformly at random (with replacement)</p>
+<p>Default is False.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.arms.exponential">
+<em class="property">class </em><code class="descclassname">multibeep.arms.</code><code class="descname">exponential</code><span class="sig-paren">(</span><em>float_t l</em>, <em>rng_class rng</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.exponential" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.arms.base" title="multibeep.arms.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.arms.base</span></code></a></p>
+<p>An arm with the exponential reward distribution.</p>
+<p>Provides a posterior using an inverse-Gamma prior.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>l</strong> (<em>float</em>) &#8211; the lambda parameter of the exponential distribution</li>
+<li><strong>rng</strong> (<a class="reference internal" href="util.html#multibeep.util.rng_class" title="multibeep.util.rng_class"><em>multibeep.util.rng_class</em></a>) &#8211; a random number generator object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.arms.normal">
+<em class="property">class </em><code class="descclassname">multibeep.arms.</code><code class="descname">normal</code><span class="sig-paren">(</span><em>float_t mean</em>, <em>float_t variance</em>, <em>rng_class rng</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.normal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.arms.base" title="multibeep.arms.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.arms.base</span></code></a></p>
+<p>An arm with a normal reward distribution</p>
+<p>Provides a Bayesian posterior where the mean and variance are unknown!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mean</strong> (<em>float</em>) &#8211; the mean of the normal distribution</li>
+<li><strong>variance</strong> (<em>float</em>) &#8211; the variance of the normal distribution</li>
+<li><strong>rng</strong> (<a class="reference internal" href="util.html#multibeep.util.rng_class" title="multibeep.util.rng_class"><em>multibeep.util.rng_class</em></a>) &#8211; a random number generator object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.arms.python">
+<em class="property">class </em><code class="descclassname">multibeep.arms.</code><code class="descname">python</code><span class="sig-paren">(</span><em>obj</em>, <em>name='custom python arm'</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.python" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.arms.base" title="multibeep.arms.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.arms.base</span></code></a></p>
+<dl class="method">
+<dt id="multibeep.arms.python.deactivate">
+<code class="descname">deactivate</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.python.deactivate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.arms.python.posterior">
+<code class="descname">posterior</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.python.posterior" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.arms.python.pull">
+<code class="descname">pull</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.python.pull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.arms.python.real_mean">
+<code class="descname">real_mean</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.python.real_mean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.arms.python.real_variance">
+<code class="descname">real_variance</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.arms.python.real_variance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="util.html"
+                        title="previous chapter">The util submodule</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="bandits.html"
+                        title="next chapter">The bandits submodule</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/arms.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bandits.html" title="The bandits submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="util.html" title="The util submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">multibeep 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Joel Kaiser, Stefan Falkner.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The bandits submodule &#8212; multibeep 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="multibeep 0.1 documentation" href="index.html" />
+    <link rel="next" title="The policies submodule" href="policies.html" />
+    <link rel="prev" title="The arms submodule" href="arms.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="policies.html" title="The policies submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="arms.html" title="The arms submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">multibeep 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-bandits-submodule">
+<h1>The bandits submodule<a class="headerlink" href="#the-bandits-submodule" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<span class="target" id="module-multibeep.bandits"></span><dl class="class">
+<dt id="multibeep.bandits.arm_info">
+<em class="property">class </em><code class="descclassname">multibeep.bandits.</code><code class="descname">arm_info</code><a class="headerlink" href="#multibeep.bandits.arm_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.estimated_mean">
+<code class="descname">estimated_mean</code><a class="headerlink" href="#multibeep.bandits.arm_info.estimated_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>estimated_mean</em> &#8211; &#8216;float_t&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.estimated_variance">
+<code class="descname">estimated_variance</code><a class="headerlink" href="#multibeep.bandits.arm_info.estimated_variance" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>estimated_variance</em> &#8211; &#8216;float_t&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.identifier">
+<code class="descname">identifier</code><a class="headerlink" href="#multibeep.bandits.arm_info.identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>identifier</em> &#8211; &#8216;unsigned int&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.index">
+<code class="descname">index</code><a class="headerlink" href="#multibeep.bandits.arm_info.index" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>index</em> &#8211; &#8216;unsigned int&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.is_active">
+<code class="descname">is_active</code><a class="headerlink" href="#multibeep.bandits.arm_info.is_active" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>is_active</em> &#8211; &#8216;bool&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.name">
+<code class="descname">name</code><a class="headerlink" href="#multibeep.bandits.arm_info.name" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>name</em> &#8211; &#8216;string&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.num_pulls">
+<code class="descname">num_pulls</code><a class="headerlink" href="#multibeep.bandits.arm_info.num_pulls" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>num_pulls</em> &#8211; &#8216;long double&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.p_max">
+<code class="descname">p_max</code><a class="headerlink" href="#multibeep.bandits.arm_info.p_max" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>p_max</em> &#8211; &#8216;float_t&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.posterior">
+<code class="descname">posterior</code><a class="headerlink" href="#multibeep.bandits.arm_info.posterior" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>posterior</em> &#8211; multibeep.util.posterior_class</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.real_mean">
+<code class="descname">real_mean</code><a class="headerlink" href="#multibeep.bandits.arm_info.real_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>real_mean</em> &#8211; &#8216;float_t&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.real_variance">
+<code class="descname">real_variance</code><a class="headerlink" href="#multibeep.bandits.arm_info.real_variance" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>real_variance</em> &#8211; &#8216;float_t&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multibeep.bandits.arm_info.rewards">
+<code class="descname">rewards</code><a class="headerlink" href="#multibeep.bandits.arm_info.rewards" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>rewards</em> &#8211; &#8216;vector[float_t]&#8217;</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.bandits.base">
+<em class="property">class </em><code class="descclassname">multibeep.bandits.</code><code class="descname">base</code><a class="headerlink" href="#multibeep.bandits.base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Base class for all bandits.</p>
+<p>It contains the functionality common to all subclasses. To access the
+arm_info objects of the contained arms, use the index operator &#8216;[]&#8217;</p>
+<dl class="method">
+<dt id="multibeep.bandits.base.add_arm">
+<code class="descname">add_arm</code><span class="sig-paren">(</span><em>self</em>, <em>base arm</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.add_arm" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds an arm to the bandit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arm</strong> (<a class="reference internal" href="arms.html#multibeep.arms.base" title="multibeep.arms.base"><em>multibeep.arms.base</em></a>) &#8211; an instantiated arm</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>unsigned int</em> &#8211; the unique identifier associated with the arm just added</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.deactivate_by_confidence_gap">
+<code class="descname">deactivate_by_confidence_gap</code><span class="sig-paren">(</span><em>self</em>, <em>float_t delta</em>, <em>bool consider_inactive_arms=True</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.deactivate_by_confidence_gap" title="Permalink to this definition">¶</a></dt>
+<dd><p>deactivates arms based on the posteriors by comparing the confidence bounds computed from the posteriors</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>delta</strong> (<em>double</em>) &#8211; determines the size of the used confidence bounds. They are computed as the
+delta/2, and 1-delta/2 quantiles respectively</li>
+<li><strong>consider_inactive_arms</strong> (<em>bool</em>) &#8211; If True, the bounds of the inactive arms are also considered to find the largest lower bound.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.deactivate_by_identifier">
+<code class="descname">deactivate_by_identifier</code><span class="sig-paren">(</span><em>self</em>, <em>unsigned int ident</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.deactivate_by_identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>deactivates an arm based on its unique identifier</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ident</strong> (<em>unsigned int</em>) &#8211; the identifier that should be deactivated. In contrast to indices,
+the identifiers are constant over the lifetime of a bandit.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.deactivate_by_index">
+<code class="descname">deactivate_by_index</code><span class="sig-paren">(</span><em>self</em>, <em>unsigned int index</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.deactivate_by_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>deactivates an arm based on its current index</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> (<em>unsigned int</em>) &#8211; the index that should be deactivated. Note the indices of
+other arms might change, so don&#8217;t use this in succession!
+See deactivate_by_identifier for deactivating multiple arms.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.deactivate_n_worst">
+<code class="descname">deactivate_n_worst</code><span class="sig-paren">(</span><em>self</em>, <em>unsigned int n</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.deactivate_n_worst" title="Permalink to this definition">¶</a></dt>
+<dd><p>deactivates arms solely based on their estimated mean</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>unsigned int</em>) &#8211; the number of arms to deactivate</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.min_pull_arms">
+<code class="descname">min_pull_arms</code><span class="sig-paren">(</span><em>self</em>, <em>unsigned int min_num_pulls</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.min_pull_arms" title="Permalink to this definition">¶</a></dt>
+<dd><p>ensures that each arm has been at least pulled a given number of times</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>min_num_pulls</strong> (<em>unsigned int</em>) &#8211; minimum number of pull required for every active arm</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.number_of_active_arms">
+<code class="descname">number_of_active_arms</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.number_of_active_arms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.number_of_arms">
+<code class="descname">number_of_arms</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.number_of_arms" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>unsigned int</em> &#8211; total number of arms associated with the bandit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.number_of_pulled_arms">
+<code class="descname">number_of_pulled_arms</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.number_of_pulled_arms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.number_of_pulls">
+<code class="descname">number_of_pulls</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.number_of_pulls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.pull_by_identifier">
+<code class="descname">pull_by_identifier</code><span class="sig-paren">(</span><em>self</em>, <em>unsigned int ident</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.pull_by_identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>use this function to pull an arm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ident</strong> (<em>unsigned int</em>) &#8211; the identifier of the arm to pull</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.pull_by_index">
+<code class="descname">pull_by_index</code><span class="sig-paren">(</span><em>self</em>, <em>unsigned int index</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.pull_by_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>use this function to pull an arm. Note the index of an arm might
+change when an arm is deactivated.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> (<em>unsigned int</em>) &#8211; the index of the arm to pull</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.reactivate_by_identifier">
+<code class="descname">reactivate_by_identifier</code><span class="sig-paren">(</span><em>self</em>, <em>unsigned int ident</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.reactivate_by_identifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.reactivate_by_index">
+<code class="descname">reactivate_by_index</code><span class="sig-paren">(</span><em>self</em>, <em>unsigned int index</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.reactivate_by_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.sort_active_arms_by_mean">
+<code class="descname">sort_active_arms_by_mean</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.sort_active_arms_by_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorts the remaining active arms by the estimated mean. The values
+are in descending order such that the &#8216;best&#8217; arms has index zero.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.bandits.base.update_p_max">
+<code class="descname">update_p_max</code><span class="sig-paren">(</span><em>self</em>, <em>bool consider_inactive=False</em>, <em>float_t delta=0.01</em>, <em>unsigned int GL_num_points=64</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.base.update_p_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the p_max values for all arms, available in the arm_info objects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>consider_inactive</strong> (<em>bool</em>) &#8211; whether or not to consider all arms during the computation</li>
+<li><strong>delta</strong> (<em>float</em>) &#8211; controlls the confidence interval. See multibeep.util.posterior.base.support
+for more detail</li>
+<li><strong>GL_num_points</strong> (<em>unsigned int</em>) &#8211; number of point used during the Gauss-Legendre integration.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.bandits.empirical">
+<em class="property">class </em><code class="descclassname">multibeep.bandits.</code><code class="descname">empirical</code><a class="headerlink" href="#multibeep.bandits.empirical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.bandits.base" title="multibeep.bandits.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.bandits.base</span></code></a></p>
+<p>This bandit automatically provides a gaussian posterior based on the returned rewards.
+It does not provide a predictive posterior at the moment.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.bandits.empirical_bandit">
+<em class="property">class </em><code class="descclassname">multibeep.bandits.</code><code class="descname">empirical_bandit</code><a class="headerlink" href="#multibeep.bandits.empirical_bandit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.bandits.base" title="multibeep.bandits.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.bandits.base</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.bandits.last_n_pulls">
+<em class="property">class </em><code class="descclassname">multibeep.bandits.</code><code class="descname">last_n_pulls</code><span class="sig-paren">(</span><em>unsigned int n=1</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.bandits.last_n_pulls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.bandits.base" title="multibeep.bandits.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.bandits.base</span></code></a></p>
+<p>Similar to the empirical_bandit, but only the last few rults are used to compute
+the empirical posterior</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>unsigned int</em>) &#8211; number of previous rewards used to compute the posterior</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.bandits.last_n_pulls_bandit">
+<em class="property">class </em><code class="descclassname">multibeep.bandits.</code><code class="descname">last_n_pulls_bandit</code><a class="headerlink" href="#multibeep.bandits.last_n_pulls_bandit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.bandits.base" title="multibeep.bandits.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.bandits.base</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.bandits.posterior">
+<em class="property">class </em><code class="descclassname">multibeep.bandits.</code><code class="descname">posterior</code><a class="headerlink" href="#multibeep.bandits.posterior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.bandits.base" title="multibeep.bandits.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.bandits.base</span></code></a></p>
+<p>This bandit requires every arm added to provide a posterior!</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.bandits.posterior_bandit">
+<em class="property">class </em><code class="descclassname">multibeep.bandits.</code><code class="descname">posterior_bandit</code><a class="headerlink" href="#multibeep.bandits.posterior_bandit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.bandits.base" title="multibeep.bandits.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.bandits.base</span></code></a></p>
+</dd></dl>
+
+<div class="section" id="to-do-s">
+<h2>To Do&#8217;s<a class="headerlink" href="#to-do-s" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Integrate Joel&#8217;s code for p_max</li>
+<li>write method to convert vector based on indices to identifier based representation</li>
+<li>Bandit should know the best &#8216;true mean&#8217; for easier regret computations (could change when adding/deactivating an arm)</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The bandits submodule</a><ul>
+<li><a class="reference internal" href="#to-do-s">To Do&#8217;s</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="arms.html"
+                        title="previous chapter">The arms submodule</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="policies.html"
+                        title="next chapter">The policies submodule</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bandits.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="policies.html" title="The policies submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="arms.html" title="The arms submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">multibeep 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Joel Kaiser, Stefan Falkner.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

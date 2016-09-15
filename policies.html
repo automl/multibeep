@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The policies submodule &#8212; multibeep 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="multibeep 0.1 documentation" href="index.html" />
+    <link rel="next" title="The recommenders submodule" href="recommenders.html" />
+    <link rel="prev" title="The bandits submodule" href="bandits.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="recommenders.html" title="The recommenders submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bandits.html" title="The bandits submodule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">multibeep 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-policies-submodule">
+<h1>The policies submodule<a class="headerlink" href="#the-policies-submodule" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<span class="target" id="module-multibeep.policies"></span><dl class="class">
+<dt id="multibeep.policies.UCB_p">
+<em class="property">class </em><code class="descclassname">multibeep.policies.</code><code class="descname">UCB_p</code><span class="sig-paren">(</span><em>base b</em>, <em>rng_class rng</em>, <em>float_t p</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.policies.UCB_p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.policies.base" title="multibeep.policies.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.policies.base</span></code></a></p>
+<p>UCB_p picks the arm with the largest Upper Confidence Bound $mu_i + p cdot sigma_i$</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>b</strong> (<em>multibeep.bandits.bandit</em>) &#8211; the bandit to be played</li>
+<li><strong>rng</strong> (<a class="reference internal" href="util.html#multibeep.util.rng_class" title="multibeep.util.rng_class"><em>multibeep.util.rng_class</em></a>) &#8211; a valid random number generator</li>
+<li><strong>p</strong> (<em>double</em>) &#8211; prefactor to the standard deviation in the equation above. Controlls exploration vs. exploitation.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.policies.base">
+<em class="property">class </em><code class="descclassname">multibeep.policies.</code><code class="descname">base</code><a class="headerlink" href="#multibeep.policies.base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="multibeep.policies.base.play_n_rounds">
+<code class="descname">play_n_rounds</code><span class="sig-paren">(</span><em>self</em>, <em>unsigned int n</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.policies.base.play_n_rounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>automatically pull multiple times.</p>
+<p>If not specified otherwise, the number of rounds to play equals
+the number of pulls.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>unsigned int</em>) &#8211; number of round to be played</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.policies.base.select_next_arm">
+<code class="descname">select_next_arm</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.policies.base.select_next_arm" title="Permalink to this definition">¶</a></dt>
+<dd><p>policy suggests the next arm to pull</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>unsigned int</em> &#8211; the current <em>index</em> of the arm to pull</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.policies.prob_match">
+<em class="property">class </em><code class="descclassname">multibeep.policies.</code><code class="descname">prob_match</code><span class="sig-paren">(</span><em>base b</em>, <em>rng_class rng</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.policies.prob_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.policies.base" title="multibeep.policies.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.policies.base</span></code></a></p>
+<p>Probability Match pulls arms randomly where the probability is proportional to having the highest mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>b</strong> (<em>multibeep.bandits.bandit</em>) &#8211; the bandit to be played</li>
+<li><strong>rng</strong> (<a class="reference internal" href="util.html#multibeep.util.rng_class" title="multibeep.util.rng_class"><em>multibeep.util.rng_class</em></a>) &#8211; a valid random number generator</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.policies.random">
+<em class="property">class </em><code class="descclassname">multibeep.policies.</code><code class="descname">random</code><span class="sig-paren">(</span><em>base b</em>, <em>rng_class rng</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.policies.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.policies.base" title="multibeep.policies.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.policies.base</span></code></a></p>
+<p>the random policy just picks an arm uniformly at random among all active arms</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>b</strong> (<em>multibeep.bandits.bandit</em>) &#8211; the bandit to be played</li>
+<li><strong>rng</strong> (<a class="reference internal" href="util.html#multibeep.util.rng_class" title="multibeep.util.rng_class"><em>multibeep.util.rng_class</em></a>) &#8211; a valid random number generator</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.policies.successive_halving">
+<em class="property">class </em><code class="descclassname">multibeep.policies.</code><code class="descname">successive_halving</code><span class="sig-paren">(</span><em>base b</em>, <em>unsigned int min_num_pulls</em>, <em>float_t frac_arms</em>, <em>float_t factor_pulls=0</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.policies.successive_halving" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.policies.base" title="multibeep.policies.base"><code class="xref py py-class docutils literal"><span class="pre">multibeep.policies.base</span></code></a></p>
+<p>pulls</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>b</strong> (<em>multibeep.bandits.bandit</em>) &#8211; the bandit to be played</li>
+<li><strong>min_num_pulls</strong> (<em>unsigned int</em>) &#8211; number of pulls for every arm in the first round</li>
+<li><strong>frac_arms</strong> (<em>double</em>) &#8211; after each round, only frac_arms * b.number_of_active_arms() remain active, all others are deactivated.</li>
+<li><strong>factor_pulls</strong> (<em>double</em>) &#8211; every round the number of pull is factor_pull times the value of the previous round.
+Default is 0, which means that 1/frac arms is used. With that choice the total number
+of pulls per round is constant.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="todo">
+<h1>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h1>
+<p>Policies that need to be coded:</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>UCB1, UCB1-NORMAL</dt>
+<dd><p class="first last">P. Auer, N. Cesa-Bianchi, and P. Fischer. Finite time analysis of the multiarmed bandit problem.
+Machine Learning, 47(2-3):235–256, 2002</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>lil-UCB</dt>
+<dd><p class="first last">Jamieson et al.
+lil’ UCB : An Optimal Exploration Algorithm for Multi-Armed Bandits
+JMLR: Workshop and Conference Proceedings vol 35:1–17, 2014</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>KL-UCB</dt>
+<dd><p class="first last">Aurélien Garivier, Olivier Cappé: The KL-UCB Algorithm for Bounded Stochastic Bandits and Beyond. COLT 2011: 359-376</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>MOSS</dt>
+<dd><p class="first last">J-Y. Audibert and S. Bubeck: Minimax Policies for Adversarial and Stochastic Bandits.  Proceedings of the 22nd Annual Conference on Learning Theory 2009</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Epsilon-Greedy</dt>
+<dd><p class="first last"><a class="reference external" href="http://cs.mcgill.ca/~vkules/bandits.pdf">http://cs.mcgill.ca/~vkules/bandits.pdf</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>SoftMax/Boltzmann Exploration</dt>
+<dd><p class="first last"><a class="reference external" href="http://cs.mcgill.ca/~vkules/bandits.pdf">http://cs.mcgill.ca/~vkules/bandits.pdf</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Poker:</dt>
+<dd><p class="first last">Vermorel, Joannes, and Mehryar Mohri.
+&#8220;Multi-armed bandit algorithms and empirical evaluation.&#8221;
+European conference on machine learning. Springer Berlin Heidelberg, 2005.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>f-race</dt>
+<dd><p class="first last">Birattari, Mauro, et al.
+&#8220;F-Race and iterated F-Race: An overview.&#8221;
+Experimental methods for the analysis of optimization algorithms. Springer Berlin Heidelberg, 2010. 311-336.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Entropy search with different update rules</dt>
+<dd><ol class="first loweralpha simple">
+<li>proper predictive posterior to compute expected change in H(pmax)</li>
+</ol>
+<ol class="loweralpha simple" start="3">
+<li>Sampling from the reward history to approximate expected change in H(pmax)</li>
+</ol>
+<ol class="last loweralpha simple" start="2">
+<li>Joel&#8217;s sampling from the posterior and pretending the mean is fixed (expected &#8216;information of one mean&#8217;)</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The policies submodule</a></li>
+<li><a class="reference internal" href="#todo">TODO</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="bandits.html"
+                        title="previous chapter">The bandits submodule</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="recommenders.html"
+                        title="next chapter">The recommenders submodule</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/policies.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="recommenders.html" title="The recommenders submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bandits.html" title="The bandits submodule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">multibeep 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Joel Kaiser, Stefan Falkner.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

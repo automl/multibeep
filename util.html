@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The util submodule &#8212; multibeep 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="multibeep 0.1 documentation" href="index.html" />
+    <link rel="next" title="The arms submodule" href="arms.html" />
+    <link rel="prev" title="Welcome to multibeep’s documentation!" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="arms.html" title="The arms submodule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to multibeep’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">multibeep 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-util-submodule">
+<h1>The util submodule<a class="headerlink" href="#the-util-submodule" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<span class="target" id="module-multibeep.util"></span><dl class="class">
+<dt id="multibeep.util.gaussian_posterior">
+<em class="property">class </em><code class="descclassname">multibeep.util.</code><code class="descname">gaussian_posterior</code><span class="sig-paren">(</span><em>float_t mean</em>, <em>float_t variance</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.util.gaussian_posterior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#multibeep.util.posterior_class" title="multibeep.util.posterior_class"><code class="xref py py-class docutils literal"><span class="pre">multibeep.util.posterior_class</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.util.posterior_class">
+<em class="property">class </em><code class="descclassname">multibeep.util.</code><code class="descname">posterior_class</code><a class="headerlink" href="#multibeep.util.posterior_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>base class for all posteriors</p>
+<dl class="method">
+<dt id="multibeep.util.posterior_class.cdf">
+<code class="descname">cdf</code><span class="sig-paren">(</span><em>self</em>, <em>float_t x</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.util.posterior_class.cdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.util.posterior_class.mean">
+<code class="descname">mean</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.util.posterior_class.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>posterior&#8217;s mean</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>float</em> &#8211; the mean of the posterior or None if the posterior is invalid</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.util.posterior_class.pdf">
+<code class="descname">pdf</code><span class="sig-paren">(</span><em>self</em>, <em>float_t x</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.util.posterior_class.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>evaluates the posterior for the mean</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>float</em>) &#8211; where to evaluate the pdf</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>float</em> &#8211; the pdf value at x or None if the posterior is invalid</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.util.posterior_class.quantile">
+<code class="descname">quantile</code><span class="sig-paren">(</span><em>self</em>, <em>float_t x</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.util.posterior_class.quantile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.util.posterior_class.support">
+<code class="descname">support</code><span class="sig-paren">(</span><em>self</em>, <em>float_t delta</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.util.posterior_class.support" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="multibeep.util.posterior_class.valid">
+<code class="descname">valid</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.util.posterior_class.valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks if the posterior is useful</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>bool</em> &#8211; False, if the posterior is not valid, e.g. when not enough
+pulls have been performed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="multibeep.util.posterior_class.variance">
+<code class="descname">variance</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.util.posterior_class.variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>variance of the posterior over the mean</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>float</em> &#8211; the variance of the posterior or None if the posterior is invalid</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="multibeep.util.rng_class">
+<em class="property">class </em><code class="descclassname">multibeep.util.</code><code class="descname">rng_class</code><span class="sig-paren">(</span><em>int seed</em><span class="sig-paren">)</span><a class="headerlink" href="#multibeep.util.rng_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>a pseudo random number generator</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>seed</strong> (<em>int</em>) &#8211; to initialize the PRNG in a specific state</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to multibeep&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="arms.html"
+                        title="next chapter">The arms submodule</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/util.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="arms.html" title="The arms submodule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to multibeep’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">multibeep 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Joel Kaiser, Stefan Falkner.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>
