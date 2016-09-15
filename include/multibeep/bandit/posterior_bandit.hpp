@@ -1,7 +1,7 @@
-#ifndef MULTIBEEP_BANDIT
-#define MULTIBEEP_BANDIT
+#ifndef MULTIBEEP_POSTERIOR_BANDIT
+#define MULTIBEEP_POSTERIOR_BANDIT
 
-#include "multibeep/bandt/bandit.hpp"
+#include "multibeep/bandit/bandit.hpp"
 
 
 namespace multibeep{ namespace bandits{

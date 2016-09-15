@@ -322,38 +322,5 @@ class base{
 };
 
 
-template <typename num_t = double, typename rng_t = std::default_random_engine>
-class empirical: public base<num_t, rng_t>{
-	
-	typedef base<num_t,rng_t> base_t;
-	
-	public:
-		virtual void update_arm_info(unsigned int index){
-			auto &ai = base_t::arm_infos.at(index);
-			if (ai.dirty){
-				// empirical stats require at least 2 pulls to make sense :)
-				if (ai.reward_stats.number_of_points() >1) {
-					ai.estimated_mean = ai.reward_stats.mean();
-					ai.estimated_variance = std::max(1e-6, ai.reward_stats.variance()/ai.reward_stats.number_of_points());
-
-					ai.posterior =
-						std::shared_ptr<multibeep::util::posteriors::base<num_t, rng_t> > (
-							new multibeep::util::posteriors::gaussian_posterior<num_t, rng_t> (
-								ai.reward_stats.mean(),
-								std::max(std::numeric_limits<num_t>::min(), ai.reward_stats.variance()/ai.reward_stats.number_of_points())
-							)
-							
-					);
-				}
-				else 
-					ai.posterior = std::shared_ptr<multibeep::util::posteriors::base<num_t, rng_t> > (NULL);
-				
-				ai.dirty=false;
-				base_t::num_dirty_arms--;
-			}
-		}
-};
-
-
 }} // namespaces
 #endif

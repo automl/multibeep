@@ -1,5 +1,6 @@
 build/
 sphinx_doc/_build/
+gh_pages/
 *.o
 *.so
 bin/
