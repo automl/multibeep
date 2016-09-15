@@ -1,0 +1,9 @@
+build/
+sphinx_doc/_build/
+*.o
+*.so
+bin/
+multibeep/*.cpp
+multibeep/__pycache__
+data/
+
