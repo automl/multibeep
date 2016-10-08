@@ -21,7 +21,7 @@ print(a.pull())
 
 N = 10000
 delta = 0.1
-bandit = mb.bandits.empirical()
+bandit = mb.bandits.last_n_pulls(n=2)
 
 means = [0.5, 0.6, 0.7, 0.8]
 variances = [0.2, 0.5, 1, 0.5] 

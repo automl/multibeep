@@ -2,7 +2,9 @@
 
 #include <boost/test/unit_test.hpp>
 
-#include "multibeep/bandit/bandit.hpp"
+#include "multibeep/bandit/empirical_bandits.hpp"
+#include "multibeep/bandit/posterior_bandit.hpp"
+
 #include "multibeep/arm/exponential.hpp"
 #include "multibeep/arm/bernoulli.hpp"
 #include "multibeep/arm/normal.hpp"
@@ -10,9 +12,9 @@
 //#include "multibeep/arm/arm_generator_csv.hpp"
 
 
-//typedef std::default_random_engine rng_t;
+typedef std::default_random_engine rng_t;
 
-typedef boost::random::rand48 rng_t;
+//typedef boost::random::rand48 rng_t;
 
 //typedef boost::random::mt19937 rng_t;
 //typedef boost::random::knuth_b rng_t;

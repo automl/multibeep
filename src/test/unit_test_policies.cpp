@@ -8,7 +8,8 @@
 #include "multibeep/policy/successive_halving.hpp"
 
 
-#include "multibeep/bandit/bandit.hpp"
+#include "multibeep/bandit/empirical_bandits.hpp"
+#include "multibeep/bandit/posterior_bandit.hpp"
 #include "multibeep/arm/normal.hpp"
 
 

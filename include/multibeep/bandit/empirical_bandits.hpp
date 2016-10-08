@@ -30,7 +30,6 @@ class empirical: public base<num_t, rng_t>{
 								ai.reward_stats.mean(),
 								std::max(std::numeric_limits<num_t>::min(), ai.reward_stats.variance()/ai.reward_stats.number_of_points())
 							)
-							
 					);
 				}
 				else 
