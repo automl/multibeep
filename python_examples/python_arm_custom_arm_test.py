@@ -40,8 +40,8 @@ class python_normal_arm_known_variance(mb.arms.python):
 
 arms = list(map(lambda t: python_normal_arm_known_variance(*t), [(0.5,0.25), (0.6,0.25),(0.55,0.25)]))
 
-#bandit = mb.bandits.posterior_bandit()
-bandit = mb.bandits.empirical_bandit()
+bandit = mb.bandits.posterior()
+bandit = mb.bandits.empirical()
 bandit = mb.bandits.last_n_pulls(n=2)
 [bandit.add_arm(a) for a in arms]
 

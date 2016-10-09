@@ -42,11 +42,11 @@ cdef class base:
 	cdef  bandits_cpp.base[float_t, rand_t] * tmpptr
 
 
-cdef class empirical_bandit(base):
+cdef class empirical(base):
 	pass
 
-cdef class posterior_bandit(base):
+cdef class posterior(base):
 	pass
 
-cdef class last_n_pulls_bandit(base):
+cdef class last_n_pulls(base):
 	pass
