@@ -37,14 +37,20 @@ endif(DOXYGEN_FOUND)
 add_library(gauss_legendre ${PROJECT_SOURCE_DIR}/lib/gauss_legendre/gauss_legendre.c)
 link_libraries(gauss_legendre ${Boost_LIBRARIES}) # Deprecated but so convenient!
 
+add_subdirectory("src/test")
+
+
 if(PYTHONINTERP_FOUND)
-	add_test(NAME BuildPyRFR
-			COMMAND ${PYTHON_EXECUTABLE} ${PROJECT_SOURCE_DIR}/setup.py build_ext --force --inplace
+	add_custom_target(python_bindings ALL
+			${PYTHON_EXECUTABLE} ${PROJECT_SOURCE_DIR}/setup.py build_ext --force --inplace
 			WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
+	add_subdirectory("src/python_tests")
+else()
+	message("No Python interpreter found!")
 endif(PYTHONINTERP_FOUND)
 
 
-add_subdirectory("src/test")
+
 
 
 
