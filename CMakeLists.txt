@@ -15,6 +15,7 @@ ENDIF()
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 find_package(Doxygen)
+find_package(PythonInterp)
 
 
 enable_testing()
@@ -34,26 +35,16 @@ endif(DOXYGEN_FOUND)
 
 
 add_library(gauss_legendre ${PROJECT_SOURCE_DIR}/lib/gauss_legendre/gauss_legendre.c)
-
 link_libraries(gauss_legendre ${Boost_LIBRARIES}) # Deprecated but so convenient!
+
+if(PYTHONINTERP_FOUND)
+	add_test(NAME BuildPyRFR
+			COMMAND ${PYTHON_EXECUTABLE} ${PROJECT_SOURCE_DIR}/setup.py build_ext --force --inplace
+			WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
+endif(PYTHONINTERP_FOUND)
+
 
 add_subdirectory("src/test")
 
-#add_executable(ut_arm "${PROJECT_SOURCE_DIR}/src/test/unit_test_arm.cpp")
-#set_property(TARGET ut_arm PROPERTY CXX_STANDARD 11)
-#set_property(TARGET ut_arm PROPERTY CXX_STANDARD_REQUIRED ON)
-#add_test (UTArm ut_arm)
 
-
-#add_executable(ut_bandit "${PROJECT_SOURCE_DIR}/src/test/test_bandit.cpp")
-#set_property(TARGET ut_bandit PROPERTY CXX_STANDARD 11)
-#set_property(TARGET ut_bandit PROPERTY CXX_STANDARD_REQUIRED ON)
-#add_test (UTBandit ut_bandit)
-
-
-#add_executable(ut_policy "${PROJECT_SOURCE_DIR}/src/test/test_policy.cpp")
-#set_property(TARGET ut_policy PROPERTY CXX_STANDARD 11)
-#set_property(TARGET ut_policy PROPERTY CXX_STANDARD_REQUIRED ON)
-#add_test (UTPolicy ut_policy)
-#set_tests_properties (UTPolicy PROPERTIES PASS_REGULAR_EXPRESSION "No errors detected")
 
