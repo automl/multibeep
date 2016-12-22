@@ -68,7 +68,7 @@ class last_n_pulls: public base<num_t, rng_t>{
 				ai.estimated_mean = stats.mean();
 				ai.estimated_variance = stats.variance();
 
-				if ( isnan(stats.variance()))
+				if ( std::isnan(stats.variance()))
 					ai.posterior = std::shared_ptr<multibeep::util::posteriors::base<num_t, rng_t> > (NULL);
 				else
 					ai.posterior =
@@ -271,7 +271,7 @@ class empirical_bandit: public bandit{
 				arm_info_ptr->sample_variance = this->total_variance;
 			}
 			arm_info_ptr->robust_variance = this->get_robust_variance_prediction(arm_info_ptr);
-			if (isnan(arm_info_ptr->sample_variance) || arm_info_ptr->sample_variance < 0){
+			if (std::isnan(arm_info_ptr->sample_variance) || arm_info_ptr->sample_variance < 0){
 				arm_info_ptr->sample_variance = 0.000000001;
 			}
 		}
